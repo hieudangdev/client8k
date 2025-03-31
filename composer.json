@@ -1,0 +1,76 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/khophim8k/theme-vlxx8k.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/khophim8k/theme-missav-8kphim.git"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "kho8k/theme-missav": "dev-main",
+        "kho8k/theme-vlxx8k": "dev-main",
+        "khophim8k/filemanager": "^1.1",
+        "khophim8k/kho8k-core": "^2.11",
+        "khophim8k/khophim8k-crawler-fakerview": "^1.5",
+        "laravel/framework": "^8.0",
+        "laravel/tinker": "^2.0"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.3.6",
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}
